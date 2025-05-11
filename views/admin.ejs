@@ -1,8 +1,14 @@
 <%- include('templates/header') %>
 
+<% if (error) { %>
+  <div class="alert alert-danger" role="alert">
+    <%= error %>
+  </div>
+<% } else { %>
 <h2>Admin Panel</h2>
 <p><a class="btn btn-secondary" href="/members">Back to Members</a></p>
 
 <%- include('templates/user', { users: users }) %>
+<% } %>
 
 <%- include('templates/footer') %>
