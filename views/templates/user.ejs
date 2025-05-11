@@ -1,0 +1,14 @@
+<ul class="list-group">
+  <% users.forEach(user => { %>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <span><%= user.name %> - <%= user.email %> - <%= user.user_type %></span>
+      <span>
+        <% if (user.user_type === 'user') { %>
+          <a href="/promote/<%= user._id %>" class="btn btn-sm btn-success">Promote</a>
+        <% } else { %>
+          <a href="/demote/<%= user._id %>" class="btn btn-sm btn-warning">Demote</a>
+        <% } %>
+      </span>
+    </li>
+  <% }); %>
+</ul>

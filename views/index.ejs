@@ -1,0 +1,13 @@
+<%- include('templates/header') %>
+
+<% if (session && session.authenticated) { %>
+  <h2>Hello, <%= session.name %>!</h2>
+  <p><a class="btn btn-primary" href="/members">Go to Members Area</a></p>
+  <p><a class="btn btn-secondary" href="/logout">Log Out</a></p>
+<% } else { %>
+  <h2>Welcome to the site!</h2>
+  <p><a class="btn btn-primary" href="/signup">Sign Up</a></p>
+  <p><a class="btn btn-secondary" href="/login">Log In</a></p>
+<% } %>
+
+<%- include('templates/footer') %>
